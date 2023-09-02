@@ -13,7 +13,7 @@ export class CrudService {
   addTask(task:Task):Observable<Task>{
     return this.http.post<Task>(this.serviceURL,task)
   }
-  getAllTask(task:Task):Observable<Task[]>{
+  getAllTask():Observable<Task[]>{
     return this.http.get<Task[]>(this.serviceURL)
   }
   deleteTask(task:Task):Observable<Task>{
