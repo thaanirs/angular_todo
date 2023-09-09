@@ -22,6 +22,7 @@ export class DashboardComponent {
   }
   addTask() {
     this.taskObj.task = this.addTaskValue
+    this.taskObj.isCompleted = false;
     this.crudService.addTask(this.taskObj).subscribe(
       data => {this.ngOnInit();this.addTaskValue='';}, 
       err => {alert(err);}
