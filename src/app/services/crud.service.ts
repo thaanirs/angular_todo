@@ -8,7 +8,8 @@ import { Observable,of } from 'rxjs';
 export class CrudService {
   serviceURL !: string;
   constructor(private http: HttpClient) { 
-    this.serviceURL = "http://localhost:3000/tasks"
+    // this.serviceURL = "http://localhost:3000/tasks"
+    this.serviceURL = "https://clover-axiomatic-wholesaler.glitch.me/tasks"
    }
   addTask(task:Task):Observable<Task>{
     return this.http.post<Task>(this.serviceURL,task)
