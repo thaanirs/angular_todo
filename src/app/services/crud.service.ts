@@ -23,8 +23,5 @@ export class CrudService {
   editTask(task:Task):Observable<Task>{
     return this.http.put<Task>(this.serviceURL+"/"+task.id,task)
   }
-  completeTask(task:Task):Observable<Task>{
-    return this.http.put<Task>(this.serviceURL+"/"+task.id,task)
-  }
   
 }
