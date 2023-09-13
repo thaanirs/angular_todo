@@ -41,6 +41,14 @@ export class DashboardComponent {
       err=>{alert("failed to delete")}
     )
   }
+  completeTask(task:Task){
+    this.taskObj = task;
+    this.taskObj.isCompleted = true;
+    this.crudService.editTask(this.taskObj).subscribe(
+      data=>{this.ngOnInit();},
+      err=>{alert("Failed to compelte")}
+    )
+  }
   getAllTask() {
     this.crudService.getAllTask().subscribe(
       data => {this.taskArr = data;}, 

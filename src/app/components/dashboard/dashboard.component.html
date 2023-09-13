@@ -14,25 +14,33 @@
             </button>
           </div>
         </div>
-        <h4 class="text-primary mt-4">Tasks:</h4>
+        <h4 class="text-primary mt-3">Tasks:</h4>
         <div style="overflow-y: auto; height: 350px">
           <div class="m-3" *ngFor="let task of taskArr">
-            <div class="p-2 shadow">
+            <div class="p-2 shadow" *ngIf="!task.isCompleted">
               <div class="input-group row ps-3">
                 <div class="card col-md-10 border-0">
                   {{ task.task }}
                   <span class="text-info">{{ task.isCompleted }}</span>
                 </div>
-                <button class="btn btn-outline-primary col" data-bs-toggle="modal" type="button" (click)="call(task)"
-                  data-bs-target="#exampleModal">
-                  edit
-                </button>
-                <button class="btn mx-2 btn-outline-danger col" (click)="delteTask(task)">
-                  X
-                </button>
-                <button class="btn btn-outline-success col" (click)="delteTask(task)">
-                  &check;
-                </button>
+                <button class="btn btn-outline-primary col" data-bs-toggle="modal" type="button" (click)="call(task)" data-bs-target="#exampleModal">edit</button>
+                <button class="btn mx-2 btn-outline-danger col" (click)="delteTask(task)">X </button>
+                <button class="btn btn-outline-success col" (click)="completeTask(task)">&check;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="text-success mt-3">Completed</h4>
+        <div style="overflow-y: auto; height: 350px;">
+          <div class="m-3" *ngFor="let task of taskArr">
+            <div class="p-2 shadow" *ngIf="task.isCompleted">
+              <div class="input-group row ps-3">
+                <div class="card col-md-10 border-0">
+                  {{ task.task }}
+                  <span class="text-info">{{ task.isCompleted }}</span>
+                </div>
+                <button class="btn mx-2 btn-outline-danger col" (click)="delteTask(task)">X </button>
               </div>
             </div>
           </div>
