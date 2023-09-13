@@ -21,7 +21,7 @@
               <div class="input-group row ps-3">
                 <div class="card col-md-10 border-0">
                   {{ task.task }}
-                  <span class="text-info">{{ task.isCompleted }}</span>
+                  <span class="text-info d-none">{{ task.isCompleted }}</span>
                 </div>
                 <button class="btn btn-outline-primary col" data-bs-toggle="modal" type="button" (click)="call(task)" data-bs-target="#exampleModal">edit</button>
                 <button class="btn mx-2 btn-outline-danger col" (click)="delteTask(task)">X </button>
@@ -38,7 +38,7 @@
               <div class="input-group row ps-3">
                 <div class="card col-md-10 border-0">
                   {{ task.task }}
-                  <span class="text-info">{{ task.isCompleted }}</span>
+                  <span class="text-info d-none">{{ task.isCompleted }}</span>
                 </div>
                 <button class="btn mx-2 btn-outline-danger col" (click)="delteTask(task)">X </button>
               </div>
